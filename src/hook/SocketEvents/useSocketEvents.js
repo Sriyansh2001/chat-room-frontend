@@ -42,19 +42,20 @@ export default function useSocketEvents() {
 
   const onUserMessage = (newChat) => {
     setSocketChats((prev) => [
-      ...prev,
       {
         message: newChat?.message,
         username: newChat?.username,
         messageId: newChat?.messageId,
       },
+      ...prev,
     ]);
   };
 
   const onMessageSend = (message) => {
     try {
-      if (message && isConnected) {
-        socket.emit(EVENT_TYPE.chatMessage, { message: message });
+      const trimedMessage = message?.trim();
+      if (trimedMessage && isConnected) {
+        socket.emit(EVENT_TYPE.chatMessage, { message: trimedMessage });
       }
     } catch (err) {
       console.error(err);
