@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(67, 128, 108);
+}
+
+.formContainer {
+  height: 50vh;
+  width: 50vw;
+  min-width: 270px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+.textContent {
+  text-align: center;
+}
+
+.submitButton {
+  background-color: rgb(24, 107, 216) !important;
+  width: 100px;
+  color: white !important;
+}

@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+}
+
+.chatContainer {
+  width: 60vw;
+}
+
+.userView {
+  width: 40vw;
+}
+
+.inputTextContainer {
+  margin: 10px;
+}
+
+.inputContainer {
+  padding: 10px;
+}
+
+.username {
+  font-size: 0.8rem;
+  color: rgb(81, 76, 76);
+}
+
+.message {
+  font-size: 1rem;
+}
