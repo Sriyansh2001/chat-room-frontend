@@ -4,4 +4,5 @@ export const EVENT_TYPE = {
   chatMessage: "chat-message",
   sendMessage: "send-message",
   newUserConnected: "new-user-connected",
+  connectedUserList: "connected-user-list",
 };

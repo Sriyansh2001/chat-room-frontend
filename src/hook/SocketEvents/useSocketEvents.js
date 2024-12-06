@@ -6,18 +6,21 @@ export default function useSocketEvents() {
   const { socket } = useSocket();
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [socketChats, setSocketChats] = useState([]);
+  const [connectedUserList, setConnectedUserList] = useState({});
 
   useEffect(() => {
     socket.on(EVENT_TYPE.connect, onConnectToChat);
     socket.on(EVENT_TYPE.disconnect, onDisconnectToChat);
     socket.on(EVENT_TYPE.chatMessage, onUserMessage);
     socket.on(EVENT_TYPE.newUserConnected, handleNewUserConnected);
+    socket.on(EVENT_TYPE.connectedUserList, handleSetConnectedUserList);
 
     return () => {
       socket.off(EVENT_TYPE.connect, onConnectToChat);
       socket.off(EVENT_TYPE.disconnect, onDisconnectToChat);
       socket.off(EVENT_TYPE.chatMessage, onUserMessage);
       socket.off(EVENT_TYPE.newUserConnected, handleNewUserConnected);
+      socket.off(EVENT_TYPE.connectedUserList, handleSetConnectedUserList);
     };
     // eslint-disable-next-line
   }, []);
@@ -38,6 +41,11 @@ export default function useSocketEvents() {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const handleSetConnectedUserList = ({ connectedUserList }) => {
+    console.log(connectedUserList);
+    setConnectedUserList(connectedUserList);
   };
 
   const onUserMessage = (newChat) => {
@@ -77,6 +85,7 @@ export default function useSocketEvents() {
   return {
     isConnected,
     socketChats,
+    connectedUserList,
     onMessageSend,
     disconnectToServer,
     handleConnectWithUserName,

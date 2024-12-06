@@ -1,35 +1,44 @@
 .container {
-  display: flex;
   height: 100vh;
-  background-color: azure;
+  background-color: #8babd8;
+  display: flex;
 }
 
-.chatContainer {
-  height: 90vh;
+.outerBox {
   display: flex;
-  flex-direction: column;
-  justify-content: end;
-  width: 60vw;
+  width: 80vw;
+  height: 90vh;
+  margin: auto;
   border: 1px solid rgb(125, 117, 117);
   border-radius: 16px;
   background-color: rgb(255, 255, 255);
-  margin: auto 10px;
-  padding: 0 10px;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  flex: 4;
 }
 
 .chatArea {
   display: flex;
   flex-direction: column-reverse;
   flex: 1;
-  margin: 16px;
   gap: 5px;
+  margin-right: 5px;
   overflow-y: scroll;
+  border-bottom: 1px solid rgb(125, 117, 117);
   scrollbar-width: thin;
   scrollbar-color: #888 #f0f0f0;
 }
 
 .heading {
   text-align: center;
+  background-color: #4c89de;
+  padding: 4px 0;
+  color: white;
+  border-top-left-radius: 16px;
 }
 
 .sendedMessage {
@@ -45,7 +54,8 @@
 }
 
 .userView {
-  width: 40vw;
+  border-left: 1px solid rgb(125, 117, 117);
+  flex: 2;
 }
 
 .inputTextContainer {
@@ -72,4 +82,20 @@
   padding: 3px 10px;
   border-radius: 10px;
   word-wrap: break-word;
+}
+
+.connectButton {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(81, 80, 117);
+}
+
+.userListContainer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: wheat;
+  padding: 0 10px;
+  border-bottom: 1px solid rgb(81, 80, 117);
+  font-size: 16px;
 }

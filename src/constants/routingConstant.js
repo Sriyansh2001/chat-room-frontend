@@ -1,5 +1,6 @@
 export const ROUTINGS = {
   FORM: "/",
+  PRIVATE_ROUTES: "/",
   CHATVIEW: "/chat-view",
 };
 
